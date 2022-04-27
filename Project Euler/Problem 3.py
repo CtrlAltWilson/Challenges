@@ -9,6 +9,8 @@ import os
 import time
 
 start_time = time.time()
+clear = lambda: os.system('cls')
+clear()
 
 def loading(i):
     i = i%10 #this gets the last digit of the number
@@ -21,9 +23,7 @@ def problem3(max):
         s.append(2)
         max = max/2
     for i in range(3,int(sqrt(max)),2):
-        print("{} {}".format(loading(i),i))
-        clear = lambda: os.system('cls')
-        clear()
+        #print("{} {}\r".format(loading(i),i),end="")
         if i > max:
             break
         while max%i == 0:
