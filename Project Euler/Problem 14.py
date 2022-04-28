@@ -12,6 +12,7 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 """
 
+from math import sqrt
 import os
 import time
 
@@ -21,7 +22,7 @@ clear()
 
 def problem14(limit):
     largest = larCount = 0
-    for i in range(2,limit,1):
+    for i in range(int(limit/2),limit,1): #we don't need to start from the bottom if we are looking for the largest chain, let's start elsewhere
         num = i
         counter = 0
         while num != 1:
