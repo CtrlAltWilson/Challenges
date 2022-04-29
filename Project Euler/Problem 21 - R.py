@@ -16,13 +16,17 @@ clear = lambda: os.system('cls')
 clear()
 
 def problem21(num):
-    return 0
+    result = 0
+    for i in range(1,num):
+        if num%i == 0:
+            result += i
+    return result
 
-num = 0
+num = 10000
 print(problem21(num))
 
 print("--- {} seconds ---".format(time.time() - start_time))
 print("\n\n")
 
-#Answer is
+#Answer is 31626
 
