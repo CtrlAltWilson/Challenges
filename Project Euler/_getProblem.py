@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup as bs
 import requests
 from os.path import exists
 from os import system
+import os
 import time
 
 start_time = time.time()
@@ -14,7 +15,7 @@ clear = lambda: system('cls')
 clear()
 
 #Config
-Problem = 21
+Problem = 29
 
 #Code
 Link = 'https://projecteuler.net/minimal={}'.format(Problem)
@@ -27,7 +28,7 @@ if soup.find_all('sup'):
     containSup = "\nWarning, this question contains Sup"
     print(containSup)
 Question = soup.get_text().strip()
-print(Question)
+#print(Question)
 template = """
 \"""
 https://projecteuler.net/problem={}
@@ -54,7 +55,10 @@ print("\\n\\n")
 #Answer is
 
 """.format(Problem,Question,containSup,Problem,Problem, "{}")
+dir_path = os.path.dirname(os.path.realpath(__file__))
 filename = "Problem {}.py".format(Problem)
+
+filename = os.path.join(dir_path,filename)
 if exists(filename):
     print("{} already exists!".format(filename))
 else:
