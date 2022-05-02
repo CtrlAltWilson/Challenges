@@ -22,7 +22,6 @@ clear()
 
 def problem29(num):
     return 0
-
 num = 0
 print(problem29(num))
 

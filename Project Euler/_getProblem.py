@@ -15,7 +15,7 @@ clear = lambda: system('cls')
 clear()
 
 #Config
-Problem = 29
+Problem = 30
 
 #Code
 Link = 'https://projecteuler.net/minimal={}'.format(Problem)
